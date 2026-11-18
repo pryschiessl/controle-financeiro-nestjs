@@ -10,7 +10,6 @@
 <body>
   <main>
     
-<main>
   <h1>Controle Financeiro</h1>
   <p>Minha saúde financeira começa aqui!</p>
 
@@ -34,6 +33,45 @@
       </article>
     </div>
   </section>
+  <section aria-label="Cadastro de transações">
+  <h2>Nova transação</h2>
+
+  <form id="formTransacao">
+    <label for="descricao">Descrição</label>
+    <input id="descricao" name="descricao" type="text" required>
+
+    <label for="valor">Valor (R$)</label>
+    <input id="valor" name="valor" type="number"
+           min="0.01" step="0.01" required>
+
+    <label for="tipo">Tipo</label>
+    <select id="tipo" name="tipo" required>
+      <option value="receita">Receita</option>
+      <option value="despesa">Despesa</option>
+    </select>
+
+    <label for="categoria">Categoria</label>
+    <input id="categoria" name="categoria" type="text" required>
+
+    <label>
+      <input id="consumoConsciente"
+             name="consumoConsciente"
+             type="checkbox">
+      Gasto consciente (essencial)
+    </label>
+
+    <button type="submit">Salvar transação</button>
+    <p id="mensagemFormulario" role="status"></p>
+  </form>
+</section>
+
+<section class="historico" aria-label="Histórico de transações">
+  <h2>Histórico de transações</h2>
+  <p>Confira os lançamentos registrados no sistema.</p>
+  
+  <ul id="listaTransacoes"></ul>
+</section>
+
 </main>
 
 <script src="js/main.js" defer></script>

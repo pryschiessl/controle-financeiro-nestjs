@@ -61,3 +61,79 @@ p {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Formulário de transações */
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(36, 32, 56, 0.08);
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input:not([type="checkbox"]),
+form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d8d0e5;
+  border-radius: 8px;
+  font: inherit;
+}
+
+form input:focus,
+form select:focus {
+  outline: 2px solid #6936b5;
+  outline-offset: 2px;
+}
+
+form button {
+  padding: 14px;
+  background: #6936b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #51258f;
+}
+
+#mensagemFormulario {
+  margin: 0;
+  color: #376a43;
+}
+
+/* Histórico de transações */
+
+.historico {
+  margin-top: 32px;
+}
+
+#listaTransacoes {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+#listaTransacoes li {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(36, 32, 56, 0.06);
+  overflow-wrap: anywhere;
+}
+
+#listaTransacoes strong {
+  color: #6936b5;
+}
