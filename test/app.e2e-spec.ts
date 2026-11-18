@@ -13,14 +13,19 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
-    await app.init();
+
+    await app.listen(0);
   });
 
-  it('/ (GET)', () => {
+  it('GET /transacoes - deve retornar metricas e historico', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/transacoes')
       .expect(200)
-      .expect('Hello World!');
+      .expect((res) => {
+        if (!res.body.metricas || !Array.isArray(res.body.historico)) {
+          throw new Error('Metricas ou historico ausentes');
+        }
+      });
   });
 
   afterEach(async () => {

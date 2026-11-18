@@ -10,6 +10,10 @@ import { join } from 'node:path';
   imports: [
     ServeStaticModule.forRoot({
       rootPath: join(process.cwd(), 'src', 'public'),
+      exclude: [],
+      serveStaticOptions: {
+        index: 'index.html',
+      },
     }),
     ConfigModule.forRoot({
       isGlobal: true,
@@ -23,6 +27,6 @@ import { join } from 'node:path';
     }),
     TransacoesModule,
   ],
-    providers: [AppService],
+  providers: [AppService],
 })
 export class AppModule {}
