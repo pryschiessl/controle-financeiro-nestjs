@@ -1,0 +1,63 @@
+/* Estilo inicial - Mobile First */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f2fa;
+  color: #242038;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #6936b5;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Dashboard financeiro */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(36, 32, 56, 0.08);
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #625b71;
+}
+
+.card p {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #6936b5;
+}
+
+/* Telas maiores */
+
+@media (min-width: 768px) {
+  .dashboard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
