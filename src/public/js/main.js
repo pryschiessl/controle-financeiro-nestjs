@@ -12,23 +12,23 @@ async function carregarResumo() {
     }
 
     const dados = await resposta.json();
+    const metricas = dados.metricas;
+    const historico = dados.historico;
 
     document.getElementById('saldoTotal').textContent = moeda.format(
-      dados.saldoTotal,
+      metricas.saldoTotal,
     );
-
-    document.getElementById('totalDespesas').textContent = moeda.format(
-      dados.totalDespesas,
+      document.getElementById('totalDespesas').textContent = moeda.format(
+      metricas.totalDespesas
     );
-
     document.getElementById('totalGastoImpulso').textContent = moeda.format(
-      dados.totalGastoImpulso,
+      metricas.totalGastoImpulso,
     );
 
     const lista = document.getElementById('listaTransacoes');
     lista.innerHTML = '';
 
-    dados.transacoes.forEach((transacao) => {
+    historico.forEach((transacao) => {
       const item = document.createElement('li');
 
       const descricao = document.createElement('strong');
@@ -41,7 +41,7 @@ async function carregarResumo() {
       lista.appendChild(item);
     });
 
-    if (dados.transacoes.length === 0) {
+    if (historico.length === 0) {
       const item = document.createElement('li');
       item.textContent = 'Nenhuma transação cadastrada.';
       lista.appendChild(item);

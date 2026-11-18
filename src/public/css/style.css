@@ -137,3 +137,10 @@ form button:hover {
 #listaTransacoes strong {
   color: #6936b5;
 }
+
+/* Alerta visual para gastos por impulso */
+
+.card:last-child p {
+  color: #c62828;
+}
+
